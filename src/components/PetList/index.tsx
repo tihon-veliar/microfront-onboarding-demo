@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Box, Button, HStack, VStack, Text, Spinner, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { fetchPets } from '@/services/contentful/petService';
-import { Pet } from '@/types/contentful';
+import type { Pet } from '@/types/contentful';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -18,7 +18,7 @@ const PetCard = ({ pet }: { pet: Pet }) => {
       justifyContent="space-between"
     >
       <Link to={`/pets/${pet.sys.id}`}>
-        <VStack spacing={3} height="100%">
+        <VStack height="100%">
           <Image
             src={pet.image?.url ? `${pet.image.url}?w=200&h=150` : '/petsPlaceholder.svg'}
             alt={pet.image?.title || 'Placeholder'}
@@ -27,7 +27,7 @@ const PetCard = ({ pet }: { pet: Pet }) => {
             height="150px"
             objectFit="cover"
           />
-          <VStack align="start" spacing={0} width="100%">
+          <VStack align="start" width="100%">
             <Text fontWeight="bold">{pet.name}</Text>
             <Text fontSize="sm" color="gray.600">
               {pet.specie} • {pet.breed}

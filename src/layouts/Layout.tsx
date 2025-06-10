@@ -5,7 +5,7 @@ const Layout = () => {
   console.log('Layout rendered');
   return (
     <Box p={4}>
-      <HStack spacing={4} mb={6}>
+      <HStack mb={6}>
         <Link to="/">
           <Button variant="ghost">Home</Button>
         </Link>

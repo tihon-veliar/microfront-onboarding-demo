@@ -1,9 +1,23 @@
 // src/types/contentful.ts
-import { Document } from '@contentful/rich-text-types';
+export interface Json {
+  content: {
+    content: {
+      marks: string[];
+      value: string;
+      nodeType: string;
+    }[];
+    nodeType: string;
+  }[];
+  nodeType: string;
+}
+
+export interface RichTextCMSI {
+  json: Json;
+}
 
 export type PageContent = {
   title: string;
-  intro: Document;
+  intro: RichTextCMSI;
   headerImage: {
     url: string;
     title: string;
@@ -30,5 +44,5 @@ export interface Pet {
     url: string;
     title?: string;
   } | null;
-  shots: Document;
+  shots: RichTextCMSI;
 }

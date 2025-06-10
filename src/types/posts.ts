@@ -10,4 +10,5 @@ export interface CommentI {
   id: number;
   title: string;
   body: string;
+  name: string;
 }

@@ -5,7 +5,7 @@ import { useLoaderData, Link } from 'react-router-dom';
 import RichText from '@/components/RichText';
 import Banner from '@/components/Banner';
 import jsonPlaceholderService from '@/services/jsonPlaceholderService';
-import { PostI } from '@/types/posts.ts';
+import type { PostI } from '@/types/posts.ts';
 
 const ITEMS_PER_PAGE = 10;
 

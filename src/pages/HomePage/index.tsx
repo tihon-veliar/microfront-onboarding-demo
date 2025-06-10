@@ -1,7 +1,6 @@
 import { Box, Heading, Button, Center } from '@chakra-ui/react';
 import { useLoaderData, Link } from 'react-router-dom';
 
-import PetList from '@/components/PetList';
 import RichText from '@/components/RichText';
 import Banner from '@/components/Banner';
 

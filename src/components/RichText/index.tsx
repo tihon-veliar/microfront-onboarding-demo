@@ -1,6 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, Document } from '@contentful/rich-text-types';
-import { ReactNode } from 'react';
+import type { Document } from '@contentful/rich-text-types';
+import type { ReactNode } from 'react';
 
 interface RichTextProps {
   content?: { nodeType: string } | null;

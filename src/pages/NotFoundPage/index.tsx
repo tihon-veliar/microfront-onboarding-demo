@@ -1,4 +1,4 @@
-import { Spinner, Box, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 const NotFoudPage = () => (
   <Box p={8}>

@@ -4,7 +4,7 @@ import { Box, Heading, Spinner, Text, Center } from '@chakra-ui/react';
 import BackButton from '@/components/BackButton';
 
 import jsonPlaceholderService from '@/services/jsonPlaceholderService';
-import { PostI, CommentI } from '@/types/posts.ts';
+import type { PostI, CommentI } from '@/types/posts.ts';
 
 const Comment = ({ comment }: { comment: CommentI }) => {
   const { id, name, body } = comment;
