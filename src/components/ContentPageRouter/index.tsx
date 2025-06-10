@@ -1,8 +1,9 @@
 import { useRoutes, useLocation, matchPath } from 'react-router-dom';
 import { pageRouteMap } from '@/routes/pageRoutes';
-import { useEffect, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 import { fetchPageContent } from '@/services/contentful/contentPageService';
 import { Spinner, Box, Text } from '@chakra-ui/react';
+import Layout from '@/layouts/Layout';
 
 const ContentPageRouter = () => {
   const location = useLocation();
@@ -32,11 +33,16 @@ const ContentPageRouter = () => {
     }
   }, [location.pathname]);
 
-  const routes = useRoutes([
-    ...pageRouteMap.map(({ path, element: Component }) => ({
-      path,
-      element: <Component pageContent={pageContent} />,
-    })),
+  const preperedMap = [
+    {
+      element: <Layout />,
+      children: [
+        ...pageRouteMap.map(({ path, element: Component }) => ({
+          path,
+          element: <Component pageContent={pageContent} />,
+        })),
+      ],
+    },
     {
       path: '*',
       element: (
@@ -47,7 +53,9 @@ const ContentPageRouter = () => {
         </Box>
       ),
     },
-  ]);
+  ];
+
+  const routes = useRoutes(preperedMap);
 
   if (loading) return <Spinner size="xl" />;
   if (error) {

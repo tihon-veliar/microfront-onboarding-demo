@@ -17,7 +17,7 @@ const PetCard = ({ pet }: { pet: Pet }) => {
       flexDirection="column"
       justifyContent="space-between"
     >
-      <Link to={`/pet/${pet.sys.id}`}>
+      <Link to={`/pets/${pet.sys.id}`}>
         <VStack spacing={3} height="100%">
           <Image
             src={pet.image?.url ? `${pet.image.url}?w=200&h=150` : '/petsPlaceholder.svg'}

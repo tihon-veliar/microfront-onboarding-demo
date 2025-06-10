@@ -1,11 +1,10 @@
-import { Box, Heading, Button, Center } from '@chakra-ui/react';
-import { useLoaderData, Link } from 'react-router-dom';
-
+import { Box, Heading } from '@chakra-ui/react';
+import { useLoaderData } from 'react-router-dom';
 import PetList from '@/components/PetList';
 import RichText from '@/components/RichText';
 import Banner from '@/components/Banner';
 
-const HomePage = () => {
+const PetsPage = () => {
   const { title, intro, headerImage } = useLoaderData();
   return (
     <Box p={8}>
@@ -16,14 +15,9 @@ const HomePage = () => {
       <Box mb={4}>
         <RichText content={intro?.json} />
       </Box>
-
-      <Center mt={8}>
-        <Button>
-          <Link to="/pets">Our pets</Link>
-        </Button>
-      </Center>
+      <PetList />
     </Box>
   );
 };
 
-export default HomePage;
+export default PetsPage;

@@ -1,15 +1,22 @@
 import HomePage from '@/pages/HomePage';
 import PetPage from '@/pages/PetPage';
+import PetsPage from '@/pages/PetsPage';
 
 export const pageRouteMap = [
   {
+    index: true,
     path: '/',
     slug: 'HomePage',
-    element: HomePage,
+    Element: HomePage,
   },
   {
-    path: '/pet/:id',
+    path: '/pets/:id',
     slug: 'PetPage',
-    element: PetPage,
+    Element: PetPage,
+  },
+  {
+    path: '/pets',
+    slug: 'PetsPage',
+    Element: PetsPage,
   },
 ];

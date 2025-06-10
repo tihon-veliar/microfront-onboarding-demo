@@ -1,7 +1,10 @@
 import ContentPageRouter from '@/components/ContentPageRouter';
 
+import { RouterProvider } from 'react-router-dom';
+import { router } from '@/routes/router';
+
 function App() {
-  return <ContentPageRouter />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
