@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# VetClinic Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React + TypeScript + Vite project demonstrating MACH architecture concepts and real-world integrations:
 
-Currently, two official plugins are available:
+- **Headless CMS**: Contentful for managing page content and pet data
+- **External Microservice**: JSONPlaceholder as an example API integration
+- **UI Library**: Chakra UI for accessible, ready-to-use components
+- **Routing**: React Router DOM for client-side routing
+- **Deployment**: Ready to publish on Vercel or GitHub Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Quick Start
 
-## Expanding the ESLint configuration
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Create a `.env` file in the project root and set the following variables:
+   ```bash
+   VITE_CONTENTFUL_SPACE_ID=YOUR_SPACE_ID
+   VITE_CONTENTFUL_DELIVERY_TOKEN=YOUR_DELIVERY_TOKEN
+   # For Commercetools:
+   VITE_CT_PROJECT_KEY=YOUR_PROJECT_KEY
+   VITE_CT_CLIENT_ID=YOUR_CLIENT_ID
+   VITE_CT_CLIENT_SECRET=YOUR_CLIENT_SECRET
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+5. Deploy on Vercel or GitHub Pages.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Services and APIs
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+ - **ContentfulClient**: GraphQL client for Contentful
+ - **PetService**: petCollection and pet-by-ID requests
+ - **ContentPageService**: loading CMS pages by slug
+ - **JsonPlaceholderService**: singleton class for posts and comments
+ - **(Optional) ProductService**: Commercetools integrations
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Routing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Routes are defined in `src/routes/pageRouteMap.ts` and applied via `createBrowserRouter` and `RouterProvider` in the application entry point.
+To add or modify a route, edit that file and ensure the corresponding page component exists under `src/pages/`.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+## License
+
+MIT
