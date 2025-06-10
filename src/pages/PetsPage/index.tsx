@@ -7,7 +7,7 @@ import Banner from '@/components/Banner';
 const PetsPage = () => {
   const { title, intro, headerImage } = useLoaderData();
   return (
-    <Box p={8}>
+    <Box p={8} pt={0}>
       <Banner image={headerImage} />
       <Heading as="h1" size="xl" mb={4}>
         {title}

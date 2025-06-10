@@ -12,9 +12,9 @@ const Layout = () => {
         <Link to="/pets">
           <Button variant="ghost">Pets</Button>
         </Link>
-        {/* <Link to="/service">
-          <Button variant="ghost">Service</Button>
-        </Link> */}
+        <Link to="/posts">
+          <Button variant="ghost">Posts</Button>
+        </Link>
       </HStack>
       <Outlet />
     </Box>

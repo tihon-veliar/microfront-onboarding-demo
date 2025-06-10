@@ -1,6 +1,8 @@
 import HomePage from '@/pages/HomePage';
 import PetPage from '@/pages/PetPage';
 import PetsPage from '@/pages/PetsPage';
+import PostsPage from '@/pages/PostsPage';
+import PostPage from '@/pages/PostPage';
 
 export const pageRouteMap = [
   {
@@ -18,5 +20,15 @@ export const pageRouteMap = [
     path: '/pets',
     slug: 'PetsPage',
     Element: PetsPage,
+  },
+  {
+    path: '/posts',
+    slug: 'PostsPage',
+    Element: PostsPage,
+  },
+  {
+    path: '/posts/:id',
+    slug: 'PostPage',
+    Element: PostPage,
   },
 ];
