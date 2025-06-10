@@ -18,10 +18,6 @@ This is a React + TypeScript + Vite project demonstrating MACH architecture conc
    ```bash
    VITE_CONTENTFUL_SPACE_ID=YOUR_SPACE_ID
    VITE_CONTENTFUL_DELIVERY_TOKEN=YOUR_DELIVERY_TOKEN
-   # For Commercetools:
-   VITE_CT_PROJECT_KEY=YOUR_PROJECT_KEY
-   VITE_CT_CLIENT_ID=YOUR_CLIENT_ID
-   VITE_CT_CLIENT_SECRET=YOUR_CLIENT_SECRET
    ```
 3. Start the development server:
    ```bash
@@ -39,7 +35,6 @@ This is a React + TypeScript + Vite project demonstrating MACH architecture conc
  - **PetService**: petCollection and pet-by-ID requests
  - **ContentPageService**: loading CMS pages by slug
  - **JsonPlaceholderService**: singleton class for posts and comments
- - **(Optional) ProductService**: Commercetools integrations
 
 ## Routing
 
