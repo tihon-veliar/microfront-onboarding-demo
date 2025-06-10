@@ -37,12 +37,12 @@ const PostsPage = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <VStack align="start" spacing={4}>
+        <VStack align="start">
           {posts.map((post) => (
             <Box key={post.id} p={4} borderWidth={1} borderRadius="md" width="100%">
               <Link to={`/posts/${post.id}`}>
                 <Text fontWeight="bold">{post.title}</Text>
-                <Text noOfLines={2}>{post.body}</Text>
+                <Text>{post.body}</Text>
               </Link>
             </Box>
           ))}

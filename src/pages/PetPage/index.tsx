@@ -4,10 +4,11 @@ import { useEffect, useState, Suspense } from 'react';
 import { fetchPetById } from '@/services/contentful/petService';
 import RichText from '@/components/RichText';
 import BackButton from '@/components/BackButton';
+import { Pet } from '@/types/contentful.ts';
 
 const PetPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [pet, setPet] = useState<any>(null);
+  const [pet, setPet] = useState<Pet>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

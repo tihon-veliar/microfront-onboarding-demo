@@ -6,8 +6,8 @@ import BackButton from '@/components/BackButton';
 import jsonPlaceholderService from '@/services/jsonPlaceholderService';
 import { PostI, CommentI } from '@/types/posts.ts';
 
-const Comment = ({ comment }) => {
-  const { postId, id, name, body } = comment;
+const Comment = ({ comment }: { comment: CommentI }) => {
+  const { id, name, body } = comment;
   return (
     <Box borderWidth={1} borderRadius="md" mb={4} p={2}>
       <Text fontWeight={'bold'} mb={2}>
