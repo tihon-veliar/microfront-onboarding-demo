@@ -1,10 +1,6 @@
 import { Box, Image } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
-
-interface CMSAsset {
-  url: string;
-  title?: string;
-}
+import type { CMSAsset } from '@/types/contentful';
 
 const pulse = keyframes`
   0% {

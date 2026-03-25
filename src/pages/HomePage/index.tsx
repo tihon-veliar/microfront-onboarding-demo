@@ -3,9 +3,10 @@ import { useLoaderData, Link } from 'react-router-dom';
 
 import RichText from '@/components/RichText';
 import Banner from '@/components/Banner';
+import type { PageContent } from '@/types/contentful';
 
 const HomePage = () => {
-  const { title, intro, headerImage } = useLoaderData();
+  const { title, intro, headerImage } = useLoaderData<PageContent>();
   return (
     <Box p={8}>
       <Banner image={headerImage} />

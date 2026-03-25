@@ -3,13 +3,13 @@ import type { Document } from '@contentful/rich-text-types';
 import type { ReactNode } from 'react';
 
 interface RichTextProps {
-  content?: { nodeType: string } | null;
+  content?: Document;
 }
 
 const RichText = ({ content }: RichTextProps): ReactNode => {
   if (!content || content.nodeType !== 'document') return null;
 
-  return <>{documentToReactComponents(content as Document)}</>;
+  return <>{documentToReactComponents(content)}</>;
 };
 
 export default RichText;

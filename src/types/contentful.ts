@@ -1,4 +1,5 @@
 // src/types/contentful.ts
+import type { Document } from '@contentful/rich-text-types';
 export interface Json {
   content: {
     content: {
@@ -12,16 +13,18 @@ export interface Json {
 }
 
 export interface RichTextCMSI {
-  json: Json;
+  json: Document;
 }
+
+export type CMSAsset = {
+  url: string;
+  title: string;
+} | null;
 
 export type PageContent = {
   title: string;
   intro: RichTextCMSI;
-  headerImage: {
-    url: string;
-    title: string;
-  } | null;
+  headerImage: CMSAsset;
   sys: {
     id: string;
   };

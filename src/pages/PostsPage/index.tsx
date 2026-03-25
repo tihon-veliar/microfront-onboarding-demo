@@ -8,15 +8,12 @@ import Banner from '@/components/Banner';
 import pokeApiService from '@/services/pokeApiService';
 import type { CreatureListItem, CreatureListResponse } from '@/services/pokeApiService';
 import placeholderImage from '@/assets/placeholder.png';
+import type { PageContent } from '@/types/contentful';
 
 const ITEMS_PER_PAGE = 12;
 
 const PostsPage = () => {
-  const { title, intro, headerImage } = useLoaderData() as {
-    title: string;
-    intro: { json: unknown } | null;
-    headerImage?: unknown;
-  };
+  const { title, intro, headerImage } = useLoaderData<PageContent>();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const initialPage = Number(searchParams.get('page') ?? '0');
