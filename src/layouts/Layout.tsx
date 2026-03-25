@@ -1,22 +1,33 @@
 import { Outlet, Link } from 'react-router-dom';
-import { Box, HStack, Button } from '@chakra-ui/react';
+import { Box, HStack, Button, Flex } from '@chakra-ui/react';
+import 'nes.css/css/nes.min.css';
+import bgImage from '@/assets/bg.png';
 
 const Layout = () => {
-  console.log('Layout rendered');
   return (
-    <Box p={4}>
-      <HStack mb={6}>
+    <Box
+      p={4}
+      minH="100vh"
+      bg="#79c9f7"
+      bgImage={`url(${bgImage})`}
+      bgAttachment="fixed"
+      bgRepeat="no-repeat"
+      bgSize="cover"
+      backgroundPosition="center"
+    >
+      <HStack mb={6} align="center" justify="center">
         <Link to="/">
-          <Button variant="ghost">Home</Button>
+          <Button variant="ghost">Neo Bestiary</Button>
         </Link>
-        <Link to="/pets">
-          <Button variant="ghost">Pets</Button>
-        </Link>
-        <Link to="/posts">
-          <Button variant="ghost">Posts</Button>
+        <Link to="/bestiary">
+          <Button variant="ghost">Bestiary</Button>
         </Link>
       </HStack>
-      <Outlet />
+      <Flex align="center" justify="center">
+        <Box maxW="920px">
+          <Outlet />
+        </Box>
+      </Flex>
     </Box>
   );
 };

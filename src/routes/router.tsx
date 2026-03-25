@@ -19,6 +19,31 @@ export const router = createBrowserRouter([
             if (!pageContent) throw Error(`${slug} not found`);
             return pageContent;
           },
+          shouldRevalidate: ({ currentUrl, nextUrl }) => {
+            if (currentUrl.pathname !== nextUrl.pathname) {
+              return true;
+            }
+
+            const ignoredSearchParams = new Set(['page', 'loaded']);
+            const currentParams = new URLSearchParams(currentUrl.search);
+            const nextParams = new URLSearchParams(nextUrl.search);
+            const allKeys = new Set([
+              ...currentParams.keys(),
+              ...nextParams.keys(),
+            ]);
+
+            for (const key of allKeys) {
+              if (ignoredSearchParams.has(key)) {
+                continue;
+              }
+
+              if (currentParams.get(key) !== nextParams.get(key)) {
+                return true;
+              }
+            }
+
+            return false;
+          },
         };
       }),
       {
